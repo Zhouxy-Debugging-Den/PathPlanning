@@ -48,6 +48,7 @@ class BestFirst(AStar):
                     self.PARENT[s_n] = s
 
                     # best first set the heuristics as the priority 
+                    # 只用heuristic
                     heapq.heappush(self.OPEN, (self.heuristic(s_n), s_n))
 
         return self.extract_path(self.PARENT), self.CLOSED

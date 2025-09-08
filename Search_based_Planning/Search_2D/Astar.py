@@ -176,9 +176,12 @@ class AStar:
 
         # 对角线移动时的障碍检测
         if s_start[0] != s_end[0] and s_start[1] != s_end[1]:
+            #  判断是哪种对角线（↘ ↙ ↗ ↖）
+            # 对角线方向1，取到两端点的 "中间格子"
             if s_end[0] - s_start[0] == s_start[1] - s_end[1]:
                 s1 = (min(s_start[0], s_end[0]), min(s_start[1], s_end[1]))
                 s2 = (max(s_start[0], s_end[0]), max(s_start[1], s_end[1]))
+            # 对角线方向2，取到另一种对角线的 "中间格子"
             else:
                 s1 = (min(s_start[0], s_end[0]), max(s_start[1], s_end[1]))
                 s2 = (max(s_start[0], s_end[0]), min(s_start[1], s_end[1]))

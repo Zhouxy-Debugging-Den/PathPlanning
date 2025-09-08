@@ -43,6 +43,7 @@ class DFS(AStar):
                     self.PARENT[s_n] = s
 
                     # dfs, add new node to the front of the openset
+                    # 后进先出，比优先级队列第一个值的优先值小，优先级更高
                     prior = self.OPEN[0][0]-1 if len(self.OPEN)>0 else 0
                     heapq.heappush(self.OPEN, (prior, s_n))
 

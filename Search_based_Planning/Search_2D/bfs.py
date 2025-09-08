@@ -48,6 +48,7 @@ class BFS(AStar):
                     self.PARENT[s_n] = s
 
                     # bfs, add new node to the end of the openset
+                    # 每次都添加到最后优先级队列最后，这样就是广度优先
                     prior = self.OPEN[-1][0]+1 if len(self.OPEN)>0 else 0
                     heapq.heappush(self.OPEN, (prior, s_n))
 

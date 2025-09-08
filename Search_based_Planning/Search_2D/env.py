@@ -5,16 +5,17 @@ Env 2D
 
 
 class Env:
+    # 初始化
     def __init__(self):
         self.x_range = 51  # size of background
         self.y_range = 31
         self.motions = [(-1, 0), (-1, 1), (0, 1), (1, 1),
                         (1, 0), (1, -1), (0, -1), (-1, -1)]
         self.obs = self.obs_map()
-
+    # 更新障碍物
     def update_obs(self, obs):
         self.obs = obs
-
+    # 静态障碍物
     def obs_map(self):
         """
         Initialize obstacles' positions
